@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>NotePad</title>
+</head>
+<body>
+    
+    <div class="container" id="app">
+        <div class="card">
+            <h1>{{ title }}</h1>
+            <div class="form-control">
+                <textarea name="textarea" id="area"
+                    cols="30" rows="10"
+                    v-bind:value="inputValue"
+                    v-on:input="inputChangeHandler"
+                ></textarea>
+            </div>
+            <button class="btn" v-on:click="addNewNote">save</button>
+        </div>
+        <ul class="list">
+            <li class="list-item" v-for="myNote in notes">
+                {{ myNote}}
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
