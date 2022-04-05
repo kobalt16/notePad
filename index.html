@@ -23,6 +23,7 @@
         <ul class="list">
             <li class="list-item" v-for="myNote in notes">
                 {{ myNote}}
+                <button class="btn remove" v-on:click="delNote(idx)">remove</button>
             </li>
         </ul>
     </div>
